@@ -33,6 +33,31 @@ export const createStream = (formValue) => async (dispatch, getState) => {
   history.push("/");
 };
 
+export const createStream = () = async(dispatch,getState)=>{
+    const responcxe = await stream.post('/stream',{params:{q:'',form:''}});
+    dispatch({{
+            tye:CREATE_STREAM,
+              payload:response.data
+             }})
+    
+}
+
+
+export const createStream = () = async(dispatch,getState)=>{
+    const responcxe = await stream.post('/stream',{params:{q:'',form:''}});
+    dispatch({{
+            tye:CREATE_STREAM,
+              payload:response.data
+             }})
+    
+    
+()=>{
+        return createStream
+    }    
+}
+
+
+
 export const fetchStreams = () => async (dispatch) => {
   const response = await stream.get("./streams");
   dispatch({
@@ -45,6 +70,7 @@ export const fetchStream = (id) => async (dispatch) => {
   const response = await stream.get(`/streams/${id}`);
 
   dispatch({
+      
     type: FETCH_STREAM,
     payload: response.data,
   });
@@ -65,4 +91,5 @@ export const deleteStream = (id) => async (dispatch) => {
     type: DELETE_STREAM,
     payload: id,
   });
+  history.push("/");
 };

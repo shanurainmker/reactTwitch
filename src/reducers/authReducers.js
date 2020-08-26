@@ -1,7 +1,7 @@
 import { SIGN_IN, SIGN_OUT } from "../actions/type";
 
 const INTIAL_STATE = {
-  isSignedIN: null,
+  isSignedIn: null,
   userId: null,
 };
 export default (state = INTIAL_STATE, action) => {
